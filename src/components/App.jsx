@@ -25,15 +25,11 @@ export class App extends Component {
     const nextSearch = this.state.search;
     const prevPage = prevState.page;
     const nextPage = this.state.page;
-    
-    if (prevSearch !== nextSearch || prevPage !== nextPage) {
-      if (prevSearch !== nextSearch) {
-        this.setState({ imagesList: [], page: 1 });
-      }
 
+    if (prevSearch !== nextSearch || prevPage !== nextPage) {
       this.setState({ loading: true })
       
-      pixaBayApi(nextSearch, nextPage).then(({hits, total}) => {
+      pixaBayApi(nextSearch, nextPage).then(({ hits, total }) => {
         if (hits.length === 0 && this.state.search) {
           toast.error('Nothing found')
         }
@@ -63,7 +59,7 @@ export class App extends Component {
   }
 
   handleFormSubmit = search => {
-    this.setState({ search: search });
+    this.setState({ search: search, page: 1, imagesList: []});
   }
 
   render() {
