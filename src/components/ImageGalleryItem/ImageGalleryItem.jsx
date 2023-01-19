@@ -17,5 +17,6 @@ export default ImageGalleryItem
 ImageGalleryItem.propTypes = {
   preivewUrl: PropTypes.string.isRequired,
   largeImageURL: PropTypes.string.isRequired,
+  tags: PropTypes.string.isRequired,
   onShowModal: PropTypes.func.isRequired,
 }

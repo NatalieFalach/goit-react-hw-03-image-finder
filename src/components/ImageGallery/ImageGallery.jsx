@@ -21,7 +21,12 @@ const ImageGallery = ({ imagesList, onShowModal }) => {
 }
 
 ImageGallery.propTypes = {
-  imagesList: PropTypes.array.isRequired,
+  imagesList: PropTypes.arrayOf(PropTypes.shape({
+    webformatURL: PropTypes.string.isRequired,
+    largeImageURL: PropTypes.string.isRequired,
+    tags: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired
+  })).isRequired,
   onShowModal: PropTypes.func.isRequired
 };
 

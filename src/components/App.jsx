@@ -74,7 +74,7 @@ export class App extends Component {
 
         {this.state.loading && <Loader />}
 
-        {this.state.isShowLoadMore && <Button onLoadMore={this.onLoadMore} />}
+        {!this.state.loading && this.state.isShowLoadMore && <Button onLoadMore={this.onLoadMore} />}
         
         {this.state.isShowModal && (
           <Modal onClose={this.toggleModal}>
